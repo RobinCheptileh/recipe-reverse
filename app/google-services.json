@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "858947022184",
+    "firebase_url": "https://recipe-reverse.firebaseio.com",
+    "project_id": "recipe-reverse",
+    "storage_bucket": "recipe-reverse.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:858947022184:android:d0656a28b8efe9cb",
+        "android_client_info": {
+          "package_name": "com.cognition.android.recipereverse"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "858947022184-ocslbe618t9g5ee4a8gk4d2cv3kmn2qf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cognition.android.recipereverse",
+            "certificate_hash": "7b56aef618383f25f952bba7de2651dd052b10b6"
+          }
+        },
+        {
+          "client_id": "858947022184-10h739cs3lmmb9ri5cqt2unvm4abkich.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJtJc2LGcr3nQyDaiCo0QV5Lj1zY8dr4U"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "858947022184-10h739cs3lmmb9ri5cqt2unvm4abkich.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
