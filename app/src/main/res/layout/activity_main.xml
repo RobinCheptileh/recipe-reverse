@@ -14,7 +14,7 @@
         app:cardUseCompatPadding="true">
 
         <androidx.appcompat.widget.AppCompatAutoCompleteTextView
-            android:id="@+id/txt_search"
+            android:id="@+id/search_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
@@ -30,23 +30,23 @@
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.chip.ChipGroup
-        android:id="@+id/chip_group"
+        android:id="@+id/selected_ingredients_chip_group"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp" />
+        android:layout_marginTop="8dp"
+        app:chipSpacingVertical="5dp" />
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/refresh_results"
+        android:id="@+id/refresh_recipes"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="8dp">
+        android:layout_marginTop="16dp">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/list_results"
+            android:id="@+id/list_recipes"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
-
 
 </androidx.appcompat.widget.LinearLayoutCompat>

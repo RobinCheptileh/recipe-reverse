@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,22 +26,23 @@ import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class ResultsAdapter extends RecyclerView.Adapter<ResultsAdapter.ResultViewHolder> {
+public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.RecipeViewHolder> {
+
+    private final String TAG = getClass().getSimpleName();
 
     private Context mContext;
     private List<Recipe> recipes;
-    private FirebaseStorage storage;
     private StorageReference storageReference;
 
-    public ResultsAdapter(Context mContext, List<Recipe> recipes) {
+    public RecipesAdapter(Context mContext, List<Recipe> recipes) {
         this.mContext = mContext;
         this.recipes = recipes;
 
-        this.storage = FirebaseStorage.getInstance();
-        this.storageReference = this.storage.getReference();
+        FirebaseStorage storage = FirebaseStorage.getInstance();
+        this.storageReference = storage.getReference();
     }
 
-    class ResultViewHolder extends RecyclerView.ViewHolder {
+    class RecipeViewHolder extends RecyclerView.ViewHolder {
 
         @BindView(R.id.item_card)
         MaterialCardView itemCard;
@@ -60,13 +62,13 @@ public class ResultsAdapter extends RecyclerView.Adapter<ResultsAdapter.ResultVi
         @BindView(R.id.item_share)
         Chip itemShare;
 
-        public ResultViewHolder(@NonNull View itemView) {
+        RecipeViewHolder(@NonNull View itemView) {
             super(itemView);
 
             ButterKnife.bind(this, itemView);
         }
 
-        public void bind(int position) {
+        void bind(int position) {
             Recipe recipe = recipes.get(position);
 
             storageReference.child(recipe.getImage())
@@ -83,6 +85,8 @@ public class ResultsAdapter extends RecyclerView.Adapter<ResultsAdapter.ResultVi
 
             itemName.setText(recipe.getName());
             itemDescription.setText(implode(", ", recipe.getIngredients()));
+
+            Log.d(TAG, implode(" and ", recipe.getIngredients()));
 
             View.OnClickListener onClickListener = v -> {
                 Intent webIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(recipe.getUrl()));
@@ -110,15 +114,15 @@ public class ResultsAdapter extends RecyclerView.Adapter<ResultsAdapter.ResultVi
 
     @NonNull
     @Override
-    public ResultViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public RecipeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_result, parent, false);
 
-        return new ResultViewHolder(view);
+        return new RecipeViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final ResultViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final RecipeViewHolder holder, int position) {
         holder.bind(position);
     }
 
@@ -127,12 +131,14 @@ public class ResultsAdapter extends RecyclerView.Adapter<ResultsAdapter.ResultVi
         return this.recipes.size();
     }
 
-
-    private String implode(String delimeter, List<String> elements) {
+    public static String implode(String delimeter, List<String> elements) {
         StringBuilder builder = new StringBuilder();
-        for (String s : elements)
-            builder.append(s).append(delimeter);
-        builder.delete(-1, (-1 - delimeter.length()));
+        String prefix = "";
+        for (String s : elements) {
+            builder.append(prefix);
+            prefix = delimeter;
+            builder.append(s);
+        }
         return builder.toString();
     }
 }
