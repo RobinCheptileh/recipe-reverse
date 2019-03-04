@@ -93,6 +93,8 @@ public class MainActivity extends AppCompatActivity {
                     selectedIngredientsChipGroup.removeView(ingredientChip);
                     searchText.setText(ingredient);
                     searchText.selectAll();
+
+                    filterRecipes();
                 });
 
                 selectedIngredientsChipGroup.addView(ingredientChip);
