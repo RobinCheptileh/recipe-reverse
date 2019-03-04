@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Recipe Reverse</string>
     <string name="enter_an_ingredient">Enter an ingredient</string>
+    <string name="name">Name</string>
+    <string name="website">Website</string>
+    <string name="description">Description</string>
+    <string name="share">Share</string>
 </resources>
