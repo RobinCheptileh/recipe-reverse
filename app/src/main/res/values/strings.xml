@@ -5,4 +5,5 @@
     <string name="website">Website</string>
     <string name="description">Description</string>
     <string name="share">Share</string>
+    <string name="share_string">Check out this awesome recipe for %s:  %s</string>
 </resources>

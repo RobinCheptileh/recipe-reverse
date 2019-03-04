@@ -7,8 +7,7 @@
     android:clickable="true"
     android:focusable="true"
     android:foreground="?attr/selectableItemBackground"
-    android:orientation="vertical"
-    app:cardUseCompatPadding="true">
+    android:orientation="vertical">
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
@@ -19,7 +18,8 @@
             android:id="@+id/item_image"
             android:layout_width="match_parent"
             android:layout_height="194dp"
-            android:scaleType="centerCrop" />
+            android:scaleType="centerCrop"
+            android:src="@drawable/placeholder" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/item_name"
