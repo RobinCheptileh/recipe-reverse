@@ -1,8 +1,10 @@
-package com.cognition.android.recipereverse;
+package com.cognition.android.recipereverse.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.cognition.android.recipereverse.R;
 
 public class MainActivity extends AppCompatActivity {
 
