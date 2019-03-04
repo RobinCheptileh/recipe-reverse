@@ -40,6 +40,8 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.RecipeVi
 
         FirebaseStorage storage = FirebaseStorage.getInstance();
         this.storageReference = storage.getReference();
+
+        setHasStableIds(true);
     }
 
     class RecipeViewHolder extends RecyclerView.ViewHolder {
@@ -129,6 +131,12 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.RecipeVi
     @Override
     public int getItemCount() {
         return this.recipes.size();
+    }
+
+    @Override
+    public long getItemId(int position) {
+        Recipe recipe = this.recipes.get(position);
+        return recipe.getId().hashCode();
     }
 
     public static String implode(String delimeter, List<String> elements) {

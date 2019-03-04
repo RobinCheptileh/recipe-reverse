@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/item_card"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:layout_marginTop="8dp"
     android:clickable="true"
     android:focusable="true"
@@ -34,7 +34,6 @@
             android:singleLine="true"
             android:text="@string/name"
             android:textColor="@color/colorTextBlack"
-            android:textIsSelectable="true"
             android:textSize="21sp"
             android:textStyle="bold"
             app:fontFamily="sans-serif" />
@@ -48,9 +47,9 @@
             android:layout_marginRight="16dp"
             android:ellipsize="end"
             android:maxLines="3"
+            android:singleLine="true"
             android:text="@string/description"
             android:textColor="@color/colorTextBlack"
-            android:textIsSelectable="true"
             android:textSize="13sp"
             app:fontFamily="sans-serif" />
 

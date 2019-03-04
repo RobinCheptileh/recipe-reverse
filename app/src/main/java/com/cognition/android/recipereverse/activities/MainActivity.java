@@ -129,6 +129,7 @@ public class MainActivity extends AppCompatActivity {
                         mIngredientsAdapter.notifyDataSetChanged();
                         for (QueryDocumentSnapshot document : task.getResult()) {
                             Recipe recipe = document.toObject(Recipe.class);
+                            recipe.setId(document.getId());
                             recipes.add(recipe);
                             filteredRecipes.add(recipe);
                             mRecipesAdapter.notifyItemInserted(filteredRecipes.size() - 1);

@@ -3,6 +3,7 @@ package com.cognition.android.recipereverse.models;
 import java.util.List;
 
 public class Recipe {
+    private String id;
     private String name;
     private String url;
     private String image;
@@ -16,6 +17,22 @@ public class Recipe {
         this.url = url;
         this.image = image;
         this.ingredients = ingredients;
+    }
+
+    public Recipe(String id, String name, String url, String image, List<String> ingredients) {
+        this.id = id;
+        this.name = name;
+        this.url = url;
+        this.image = image;
+        this.ingredients = ingredients;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {
