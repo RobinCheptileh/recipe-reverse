@@ -6,7 +6,7 @@ Recipe Reverse allows you to find a popular recipe by specifying the ingredients
 
 ## Get it on Google Play
 
-<a href="https://play.google.com/store/apps/details?id=com.cognition.android.recipereverse"><img src="screenshots/google-play-badge.png" alt="Get it on Google Play" height="200px"/></a>
+<a href="https://play.google.com/store/apps/details?id=com.cognition.android.recipereverse"><img src="screenshots/google-play-badge.png" alt="Get it on Google Play" height="100px"/></a>
 
 ## About
 
