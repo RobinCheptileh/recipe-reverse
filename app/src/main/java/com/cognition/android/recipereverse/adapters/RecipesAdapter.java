@@ -135,16 +135,20 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.RecipeVi
 
     @Override
     public long getItemId(int position) {
-        Recipe recipe = this.recipes.get(position);
-        return recipe.getId().hashCode();
+        return position;
     }
 
-    public static String implode(String delimeter, List<String> elements) {
+    @Override
+    public int getItemViewType(int position) {
+        return position;
+    }
+
+    public static String implode(String delimiter, List<String> elements) {
         StringBuilder builder = new StringBuilder();
         String prefix = "";
         for (String s : elements) {
             builder.append(prefix);
-            prefix = delimeter;
+            prefix = delimiter;
             builder.append(s);
         }
         return builder.toString();
